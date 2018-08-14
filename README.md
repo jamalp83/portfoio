@@ -27,3 +27,7 @@
 <img src="https://lh4.googleusercontent.com/-mV8HRdZQu0o/AAAAAAAAAAI/AAAAAAAAAEw/44u0J13N0Tw/photo.jpg" width=40% />
 
 ---
+
+## Fun Fact
+
+*"My do music production and song writing as a hobby."*
