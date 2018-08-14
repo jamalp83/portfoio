@@ -30,4 +30,4 @@
 
 ## Fun Fact
 
-*"My do music production and song writing as a hobby."*
+*"I do music production and song writing as a hobby."*
