@@ -79,12 +79,15 @@ nav a{
 /* ---------------------------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------------------------------------------- */
 
-
+/* * {
+    border: .1em solid red;
+} */
 .introhead{
     color: white; 
     text-align: center; 
     background-color: gray; 
-    margin:0em
+    /* margin:0em; */
+    border-bottom: 1px solid black;
 }
 
 .headercontainer{
@@ -96,7 +99,9 @@ nav a{
     margin-bottom: auto;
 }
 
-
+/* #home {
+    padding: 2em;
+} */
 body {
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
@@ -114,7 +119,7 @@ div {
 }
 p {
     /* this is currently empty */
-    padding: 10px;
+    /* padding: 10px; */
 }
 #header{
     background-color: bisque;
@@ -134,15 +139,20 @@ p {
 nav {
 
     border-bottom: 1px solid black;
+    text-align: center;
 }
 #navigation > a {
 
     padding-right: 10px;
+    
 }
 #content {
     background-color: gray;
 }
 #footer{
-    background-color: aquamarine;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;    
+    /* background-color: aquamarine; */
+    text-align: center;
 }
 
