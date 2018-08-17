@@ -1,4 +1,4 @@
-body {
+/* body {
 
     background-color:black ; 
     font-family: Arial, Helvetica, sans-serif;
@@ -7,15 +7,15 @@ body {
 }
 
 .page {
-    /* border: 3px blue solid; */
+    border: 3px blue solid;
     position: relative;
     width: 100%;
 
    
 }
 .menu {
-	/* border: 1px red solid; */
-	/* margin-bottom:1px; */
+	border: 1px red solid;
+	margin-bottom:1px;
 	position:sticky;
 	top:0;
 	left:0;
@@ -25,15 +25,15 @@ body {
 }
 
 .menu ul {
-	/* border:1px red solid; */
+	border:1px red solid;
 	text-align:center;
 	background-color:black;
 	
 }
 
 nav {
-	/* width:300px; */
-    /* display: inline; */
+	width:300px;
+    display: inline;
     text-align:center;
     color: white;
 	background-color:black;
@@ -45,26 +45,104 @@ nav {
 }
 
 nav a{
-    /* border:1px red solid; */
+    border:1px red solid;
     color: azure;
     padding: 0 1%;
 }
 .back {
     
-    /* margin:0px 2px 0px 2px; */
-			/*background-image: url(Looni-I-Had-To-cover-art.jpg); */
+    margin:0px 2px 0px 2px;
+			background-image: url(Looni-I-Had-To-cover-art.jpg);
     background-repeat: no-repeat;   
     background-position-x: 50%;
     height: 600px;
-     /* background-color: black; */
-    /* background-position-x: 50%;  */
+    background-color: black;
+    background-position-x: 50%; 
     color: white;
-	/* border:2px green solid; */
+	border:2px green solid;
 	
-}
+} */
 
 /* table, th, td	{
 
 	border-collapse: collapse;
 	border:2px blue solid;
 } */
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.introhead{
+    color: white; 
+    text-align: center; 
+    background-color: gray; 
+    margin:0em
+}
+
+.headercontainer{
+    height: 100%;
+}
+.headercontainer span{
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+body {
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    margin: 0 10%;                        
+}
+h3 {
+    font-style: italic;
+}
+h2 {
+    color: rgba(134, 39, 4, 0.979);
+}
+div {
+    /* border: dashed red .1em; */
+
+}
+p {
+    /* this is currently empty */
+    padding: 10px;
+}
+#header{
+    background-color: bisque;
+}
+#header h3 span{
+    margin-top:auto;
+    margin-bottom: auto;
+                
+}
+#header h3 .headtxt{
+    vertical-align: middle;
+                
+}        
+#header .headtxt{
+    font-size: 20px;
+}        
+nav {
+
+    border-bottom: 1px solid black;
+}
+#navigation > a {
+
+    padding-right: 10px;
+}
+#content {
+    background-color: gray;
+}
+#footer{
+    background-color: aquamarine;
+}
+
