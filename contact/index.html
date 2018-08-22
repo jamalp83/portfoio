@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/v4-shims.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/v4-shims.css"> -->
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">    
 </head>
@@ -25,7 +25,7 @@
                         </ul>
                         </a>
                 </li>  
-                <li><a href="index.html">Contact Us</a></li>                           
+                <li><a href="index.html">Contact</a></li>                           
                 </ul>  
     </div>    
     
@@ -38,15 +38,19 @@
             <input type="email" name="userEmail" placeholder="your.email@example.com" required>
         </div>        
 
-        <label>What's this message about? <br>
-          <input type="radio" name="subject" value="professional" checked><span>I'd like to hire you!</span>
-          <input type="radio" name="subject" value="personal" checked><span>Personal message</span>
-          <input type="radio" name="subject" value="other" checked><span>Don't know/something else</span>
-        </label>
-        <div>
+        <label class="#" for="radio1">What's this message about? </label>
+        
+        
+         <div><input type="radio" name="radio1" value="professional" checked><span>I'd like to hire you!</span></div>
+          <div><input type="radio" name="radio1" value="personal" checked><span>Personal message</span></div>
+          <div></div><input type="radio" name="radio1" value="other" checked><span>Don't know/something else</span></div>
+        
+        <div class="check">
         <input type="checkbox" name="optin" value="trusting" checked>Subscribe me to your newsletter! 
         <input type="checkbox" name="optout" value="skeptical" disabled>Cheeky checkbox... 
         </div>
+
+        <div class="drop">
         <label class="info" for="marketing">How did you hear about me?</label>
 
 
@@ -65,10 +69,12 @@
           </optgroup>
           <option value="other">Other</option>
         </select>
-      
-        <textarea name="user_message" rows="8" cols="40"></textarea>
-        <input type="submit">
+    </div>
 
+      <div class="submitting">
+        <textarea name="user_message" rows="8" cols="35"></textarea>
+        <input type="submit">
+    </div>
       </form>
       <i class="fab fa-github" style="font-size: 5em; color: rgb(0, 30, 255)"></i>
       <i class="fab fa-facebook" style="font-size: 5em"></i>
