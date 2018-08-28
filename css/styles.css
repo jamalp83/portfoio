@@ -1,113 +1,41 @@
-/* body {
 
-    background-color:black ; 
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    
-}
 
-.page {
-    border: 3px blue solid;
-    position: relative;
-    width: 100%;
 
-   
-}
-.menu {
-	border: 1px red solid;
-	margin-bottom:1px;
-	position:sticky;
-	top:0;
-	left:0;
-	right:0;
-	background-color:black;
-	
-}
-
-.menu ul {
-	border:1px red solid;
-	text-align:center;
-	background-color:black;
-	
-}
-
-nav {
-	width:300px;
-    display: inline;
-    text-align:center;
-    color: white;
-	background-color:black;
-    margin:auto;
-
-	
+body {
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+    display: grid;
+    grid-template-areas: 
+    "header"         /*introhead */
+    "navigation"       /*navigation*/
+    "content"          /*contenthome */
+    "footer";           /*footer */   
+    grid-template-rows: min-content min-content auto min-content;
+    min-height: 100vh;
 
 
 }
 
-nav a{
-    border:1px red solid;
-    color: azure;
-    padding: 0 1%;
-}
-.back {
-    
-    margin:0px 2px 0px 2px;
-			background-image: url(Looni-I-Had-To-cover-art.jpg);
-    background-repeat: no-repeat;   
-    background-position-x: 50%;
-    height: 600px;
-    background-color: black;
-    background-position-x: 50%; 
-    color: white;
-	border:2px green solid;
-	
-} */
+#contenthome {
 
-/* table, th, td	{
-
-	border-collapse: collapse;
-	border:2px blue solid;
-} */
-
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------------------------------------------- */
-
-/* * {
-    border: .1em solid red;
-} */
-
-@media screen and (min-width: 900px){
-    body {
-        grid-template-areas:
-        "navigation header"                   
-        "navigation content"
-        "navigation footer";
-    grid-template-rows: min-content auto min-content;
-    grid-template-columns: 40vw auto;
-    }
-}
-
-.formcontainer{
-    background-color: rgb(121, 133, 133);
     padding: 15px;
+    grid-area: content; 
+    background-color: gray;
+}   
 
-    
-}
 
 
-.formcontainer label{
 
-}
 i {
     display: inline;
 }
+.formcontainer {
+    grid-area: content;
+
+    
+}
+
 .formcontainer .info input{
     display: block;
     margin-top: 1em;
@@ -121,12 +49,8 @@ i {
 .drop {
     margin-top: 2em;
 }
-.submitting {
-    margin-top: 2em;
-}
-.submitting input {
-    display: block;
-}
+
+
 .formcontainer > .info  optgroup {
     display: block;
 }
@@ -137,7 +61,10 @@ i {
     background-color: gray; 
     margin:0em;
     border-bottom: 1px solid black;
-    /* grid-area: header; */
+    grid-area: header;
+    border: 1px solid red;
+    position: sticky;
+    top: 0;
 
 }
 
@@ -153,18 +80,7 @@ i {
 /* #home {
     padding: 2em;
 } */
-body {
-    font-weight: bold;
-    font-family: 'Oswald', sans-serif;
-    margin: 0px 15%;
-    /* display: grid; */
-    /* grid-template-areas:
-        "navigation"                   
-        "header"
-        "content"
-        "footer";
-    grid-template-rows: min-content min-content auto min-content; */
-}
+
 /* body #navigation{
     max-width: 100%;
 } */
@@ -184,6 +100,7 @@ p {
 }
 #header{
     background-color: bisque;
+    
 }
 #header h3 span{
     margin-top:auto;
@@ -203,20 +120,25 @@ nav {
     text-align: center;
 }
 #navigation{
+    grid-area: navigation;    
     /* background-color: rgb(209, 219, 219); */
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     /* border: 2px solid red; */
-    /* grid-area: navigation; */
 
+
+    /* display: flex;
+    flex-direction: column; */
 
 }
 
 #navigation > ul {
     align-items: center;
     display: flex;
+    /* flex-direction: row; */
     flex-direction: row;
     justify-content: space-around;
+    padding-left: 0;
     /* border: 1px solid black; */
 }
 #navigation > ul > li {
@@ -245,7 +167,7 @@ nav {
 }
 
 #navigation a + ul {
-    position: absolute;
+     position: absolute;
     left: 0px;
     display: none;
     list-style-type: none;
@@ -263,7 +185,7 @@ nav {
     
 }
 
-#navigation a:hover + ul {
+#navigation li:hover a + ul {
     display: block;
     display: flex;
     flex-direction: column;
@@ -279,12 +201,34 @@ nav {
 
 
 #content {
-    background-color: gray;
+
 }
 #footer{
+    grid-area: footer;      
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;    
     /* background-color: aquamarine; */
     text-align: center;
+
 }
 
+
+
+/* @media screen and (min-width: 385px){
+    body {
+        grid-template-areas:
+        "navigation header"                   
+        "navigation content"
+        "navigation footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 40vw auto;
+    
+}
+
+#navigation{
+    flex-direction: column;
+}
+#navigation > ul {
+    flex-direction:column;
+}
+} */
