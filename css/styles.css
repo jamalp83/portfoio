@@ -25,17 +25,26 @@ body {
 }   
 
 
-
+img {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+}
 
 i {
     display: inline;
 }
-.formcontainer {
+#formcontainer {
     grid-area: content;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
+#formcontainer p, h3 {
+    margin: 50px 200px 0 200px;
+}
 .formcontainer .info input{
     display: block;
     margin-top: 1em;
@@ -53,6 +62,11 @@ i {
 
 .formcontainer > .info  optgroup {
     display: block;
+}
+
+.formcontainer > img {
+    display: flex;
+    justify-content: center;        
 }
 /* ...................................... */
 .introhead {
@@ -129,9 +143,12 @@ nav {
 
     /* display: flex;
     flex-direction: column; */
-
+    border-bottom: 1px solid gray;
 }
 
+img {
+    text-align: center;
+}
 #navigation > ul {
     align-items: center;
     display: flex;

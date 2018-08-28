@@ -1,26 +1,30 @@
-// var changeAndShout = function changeAndShout(name){
-//     if(name === 'Jamal'){
-//         name = 'Blah';
-//     }
-//     else{
-//         name = 'Blah';
-//     }
-//     alert(name);
-// };
-
-// changeAndShout('Hello World');
-
-var welcomeUser = function welcomeUser(){
-    var userName = prompt("What's your name?");
+// ----------------------------------------------------------------------------------------------fncWelcome Function
+var fncWelcome = function fncWelcome(){
+    var numType = 1;
+    var strType = "I'm a string";
+    var bolType = true;
+    var unDef;
+    var zNull = null;
+    var strName;
+    var numAge;
 
 
-    if(userName === ''){
-        welcomeUser();
+    console.log('Number = ' + numType, ', String = ' + strType, ', Bolean = ' + bolType, ', Undefined = ' + unDef, ', Null = ' + zNull);
+
+    strName = prompt('Hello, What is your name?');
+    if(strName === ''){
+        fncWelcome();
     }
-    else{
-        alert('Welcome to my portfolio page, ' + userName);
-    // console.log('the user name -->',userName);
+
+    numAge = prompt('Welcome to my site, ' + strName + ". If you don't mind me asking, how old are you?");
+
+    while(numAge === ''){
+        numAge = prompt('Welcome to my site, ' + strName + ". If you don't mind me asking, how old are you?");
     }
+
+    alert('Wow ' + strName + "!!!!! You don't even look like you're " + numAge + '. Must be something in the water!!!');
+    console.log(numAge);
 };
+    // -------------------------------------------------------------------------------------------------
 
-welcomeUser();
+fncWelcome();
