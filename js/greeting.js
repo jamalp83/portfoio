@@ -15,7 +15,7 @@ var fncWelcome = function fncWelcome(){
     if(strName === ''){
         fncWelcome();
     }
-
+    document.querySelector('#greeting').textContent = 'Welcome to my portfolio page ' + strName;
     numAge = prompt('Welcome to my site, ' + strName + ". If you don't mind me asking, how old are you?");
 
     while(numAge === ''){
@@ -26,5 +26,15 @@ var fncWelcome = function fncWelcome(){
     console.log(numAge);
 };
     // -------------------------------------------------------------------------------------------------
+var objCar = {
+    'tireSixzeInInches': 16,
+    'Condition': 'new',
+    'bodyColor': 'yellow',
+    'bodySize': 'full size'
+
+};
+
+var konsole = {};
+
 
 fncWelcome();
