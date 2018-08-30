@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jamalp83/portfoio#readme",
   "devDependencies": {
+    "cssnano": "^4.1.0",
     "eslint": "^5.3.0"
   }
 }
