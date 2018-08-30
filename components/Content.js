@@ -12,7 +12,7 @@ export default `
         <h3>Below is old job description data from LinkedIn</h3>
         <p>As a SharePoint Architect, I use my SharePoint expertise to identify how businesses can benefit from outsourcing their on-premise SharePoint environments and then develop a solution that is deployed to their exact business requirements and specifications . Prior to helping organizations save money via Cloud adoption, I was saving them time and internal resources as a SharePoint Support Engineer, working around the clock providing real-time phone and ticket support for any SharePoint/Connectivity issues customers encountered, so no automated systems ever got in the way. In both fields, my focus is customer satisfaction and building excellent long-term relationships. </p>
 
-        <h3><a href="https://www.fpweb.net/sharepoint-blog/upcoming-fpwebinar-the-battle-of-the-clouds/">Link To a Webinar I Hosted with Fpweb</a></h3>
+        <h3><a href="https://www.fpweb.net/sharepoint-blog/upcoming-fpwebinar-the-battle-of-the-clouds/" target="_blank">Link To a Webinar I Hosted with Fpweb</a></h3>
         <p>This month, we take a whole new approach to the classic webinar with our series <strong>“Steven &amp; Jamal Discuss the Cloud.”</strong> Don’t expect PowerPoint slides driven by monotone narration – we’re mixing it up with a 20 minute live presentation featuring our friendly Cloud experts, Steven Rupp and Jamal Pryor.</p>
 
         <p><em>(This webinar is currently available to view on-demand:&nbsp;<a title="Battle of the Clouds Webinar" href="https://www.fpweb.net/sharepoint-webinars/battle-of-the-clouds-public-vs-private-cloud-hosting/" target="_blank">BATTLE OF THE CLOUDS: PUBLIC VS. PRIVATE CLOUD HOSTING</a>)</em></p>

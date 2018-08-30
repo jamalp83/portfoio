@@ -1,104 +1,95 @@
-body {
-    /* font-weight: normal;
-    
-    margin: 0px;
+
+/* * {
+    border: .1em solid red;
+} */
+
+.grid-container {
     display: grid;
     grid-template-areas: 
-    "header"         
-    "navigation"      
-    "content"          
-    "footer";           
-    grid-template-rows: min-content min-content auto min-content;
-    grid-gap: 10px;
-    min-height: 100vh;
-    position: absolute; */
-    
-    font-family: 'Oswald', sans-serif;
-    background-color: black;
-    margin-top: 0;
+    'header header header header header'         
+    'nav content content content profile'         
+    'nav content content content profile'         
+    'foot foot foot foot foot';
+    grid-gap: 15px;
+    /* background-color: #2196F3; */
+    padding: 10px;
 }
 
-hr {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* text-align: center; */
+    /* padding: 20px 5px; */
+    /* font-size: 30px; */
 }
-#root {
-    display: grid;
-    grid-template-areas: 
-    "header"         /*introhead */
-    "navigation"       /*navigation*/
-    "content"          /*contenthome */
-    "footer";           /*footer */   
-    grid-template-rows: min-content min-content auto min-content;
-    background-color: black;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 0;
-    grid-gap: 1em;
-    
-}
-#root > div {
-    background-color: white;
-}
-
-.introhead {
+ .item1 {
     grid-area: header;
-    color: white; 
-    text-align: center; 
-    background-color: gray !important; 
-    margin:0em;
+    border: 1px solid black;
+}
+
+.pro_img img {
+    width: 200px;
     /* border-bottom: 1px solid black; */
-    position: relative;
-    top: 0px;
-    width: 100%;
-
+    padding-bottom: 11px;
+}
+.pro_notes{
+    word-wrap:normal;
+    width: 212px;
+    border-bottom: 2px solid black;
 }
 
-.introhead > h1 {
-    margin: 0px;
+.pro_notes p {
+    margin: 1px 0px;
+}
+ .aboutme p {
+     font-family: monospace;
+     word-wrap: normal;
+     width: 281px;
+ }
+
+.item2 {
+    grid-area: profile;
+    padding: 11px;
+    border: 1px solid black;
 }
 
-#contenthome {
+.item3 {
+    grid-area: content;
+    border: 1px solid black;
+}
+.item3 p {
+    margin: 31px;
+}
 
+.item4 {
+    grid-area: foot;
+    text-align: center;
+    border: 1px solid black;
+}
+.item5 {
+    grid-area: nav;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.formcontainer{
+    background-color: rgb(121, 133, 133);
     padding: 15px;
-    grid-area: content; 
-    /* background-color: gray; */
-}   
 
-
-img {
-    width: 100%;
-    max-width: 300px;
-    margin-top: 15px;
-    padding: 0px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
 }
 
+
+.formcontainer label{
+
+}
 i {
     display: inline;
 }
-#contenthome {
-    grid-area: content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* border-bottom: 2px solid black; */
-    /* border-top: 2px solid black; */
-    /* position: relative; */
-   
-    
-}
-
-#contenthome p, h3 {
-    margin: 50px 200px 0 200px;
-}
-#contenthome .info input{
+.formcontainer .info input{
     display: block;
     margin-top: 1em;
     margin-bottom: 1em;
-}
 
-#contenthome > div p{
-    margin-top: 15px;
 }
 
 .check {
@@ -107,38 +98,72 @@ i {
 .drop {
     margin-top: 2em;
 }
-
-
+.submitting {
+    margin-top: 2em;
+}
+.submitting input {
+    display: block;
+}
 .formcontainer > .info  optgroup {
     display: block;
 }
-
-.formcontainer > img {
-    display: flex;
-    justify-content: center;        
-}
 /* ...................................... */
-
+.introhead {
+    color: white;
+    text-align: center;
+    background-color: gray;
+    margin:0em;
+    border-bottom: 1px solid black;
+    /* grid-area: header; */
+    text-shadow: -6px -1px 13px black;
+}
 
 .headercontainer{
     height: 100%;
 }
+.headercontainer span{
 
-.headercontainer span {
     margin-top: auto;
     margin-bottom: auto;
 }
 
+/* #home {
+    padding: 2em;
+} */
+body {
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    margin: 0px 15%;
+    background-image: url(https://previews.123rf.com/images/monsitj/monsitj1704/monsitj170400032/75527762-block-chain-network-and-programming-concept-on-technology-background.jpg);
+    background-attachment: fixed;
+    /* background-color: darkcyan; */
+    /* display: grid; */
+    /* grid-template-areas:
+        "navigation"                   
+        "header"
+        "content"
+        "footer";
+    grid-template-rows: min-content min-content auto min-content; */
+}
+/* body #navigation{
+    max-width: 100%;
+} */
 h3 {
     font-style: italic;
 }
 h2 {
     color: rgba(134, 39, 4, 0.979);
 }
+div {
+    /* border: dashed red .1em; */
 
+}
+p {
+    /* this is currently empty */
+    /* padding: 10px; */
+}
 #header{
     background-color: bisque;
-    
 }
 #header h3 span{
     margin-top:auto;
@@ -153,102 +178,95 @@ h2 {
     font-size: 20px;
 }        
 nav {
+
     border-bottom: 1px solid black;
     text-align: center;
 }
-
 #navigation{
-    grid-area: navigation;    
     /* background-color: rgb(209, 219, 219); */
-    /* position: sticky;
-    top: 0; */
+    position: sticky;
+    top: 0;
     /* border: 2px solid red; */
-    /* position: relative; */
-    top: 90px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    background-color: white;
+    /* grid-area: navigation; */
+
+
 }
 
 #navigation > ul {
-    align-items: center;
-    display: flex;
-    /* flex-direction: row; */
-    flex-direction: row;
-    justify-content: space-around;
-    padding-left: 0;
-    margin: 0;
+    /* align-items: center; */
+    /* display: flex; */
+     /* flex-direction: row;  */
+    /* justify-content: space-around; */
     /* border: 1px solid black; */
+    list-style-type: none;
+    padding-left: 0;
 }
-
-#navigation > ul > li {
-    display: inline;
-    position: relative;
-    padding: -1px;
-    background-color:rgb(150, 148, 148);
-    padding: 1px 20px 1px 20px;
-    /* border-bottom: 3px solid rgb(92, 90, 90);
-    border-left: 5px solid black; */
-}
-
+#navigation > ul > li {/* display: inline; */list-style-type: none;position: relative;padding: -1px;/* background-color:rgb(150, 148, 148); */padding: 1px 20px 1px 20px;/* border-bottom: 3px solid rgb(92, 90, 90); */border-left: 5px solid black;margin-bottom: 25px;}
 #navigation ul > li:hover{
     background-color: rgb(95, 93, 93);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
 
 #navigation > ul > li a {
     text-decoration: none;
-}
 
+}
 #navigation > ul > li a:visited {
     color: black;
+    
 }
 
 #navigation a + ul {
-     position: absolute;
+    position: absolute;
     left: 0px;
     display: none;
     list-style-type: none;
     padding: 0px;
     min-width: 160px;
     background-color: #ddd; 
-    border: 2px black solid;  
+    border: 1px black solid;  
 }
-
 #navigation  a + ul a:link { 
-    text-decoration: none;    
+    text-decoration: none;
+    
 }
-
 #navigation a + ul > li:hover {
-    background-color: rgb(138, 133, 133);  
+    background-color: rgb(138, 133, 133);
+    
 }
 
-#navigation li:hover a + ul {
+/* #navigation a:hover + ul*/ 
+#navigation li:hover a + ul{ 
     display: block;
     display: flex;
     flex-direction: column;
     word-wrap: none;
+
+
 }
 
 #navigation a + ul:hover {
     display: block;
+
 }
 
 
-
-#footer {
-    grid-area: footer;      
-    /* border-bottom: 2px solid black;     */
+#content {
+    background-color: gray;
+}
+#footer{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;    
     /* background-color: aquamarine; */
     text-align: center;
 }
-
-#pro{
-    position: fixed;
-    color: white;
-    left:10px;
-    top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.1em;
+@media screen and (min-width: 900px){
+    body {
+        grid-template-areas: 
+        "navigation header header"                            
+        "navigation content profile"         
+        "navigation footer footer";
+        grid-template-rows: min-content auto min-content;
+        grid-template-columns: 40vw auto;
+    }
 }
