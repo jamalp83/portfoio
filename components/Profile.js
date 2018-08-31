@@ -1,4 +1,5 @@
-export default `
+export default function Profile(){
+    return `
 <div class="item2">
 <div class="pro_img">
      <img src="https://pbs.twimg.com/profile_images/2767840944/099cbd84f3ff51a28756c4265638c39e_400x400.jpeg" alt="Jamal">
@@ -26,3 +27,4 @@ export default `
    </div>
 </div>
 `;
+}

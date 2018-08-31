@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------------------------fncWelcome Function
-var fncWelcome = function fncWelcome(){
+function fncWelcome(){
     var numType = 1;
     var strType = "I'm a string";
     var bolType = true;
@@ -7,7 +7,12 @@ var fncWelcome = function fncWelcome(){
     var zNull = null;
     var strName;
     var numAge;
-
+    var objCar = {
+        'tireSixzeInInches': 16,
+        'Condition': 'new',
+        'bodyColor': 'yellow',
+        'bodySize': 'full size'
+    };
 
     console.log('Number = ' + numType, ', String = ' + strType, ', Bolean = ' + bolType, ', Undefined = ' + unDef, ', Null = ' + zNull);
 
@@ -24,17 +29,7 @@ var fncWelcome = function fncWelcome(){
 
     alert('Wow ' + strName + "!!!!! You don't even look like you're " + numAge + '. Must be something in the water!!!');
     console.log(numAge);
-};
-    // -------------------------------------------------------------------------------------------------
-var objCar = {
-    'tireSixzeInInches': 16,
-    'Condition': 'new',
-    'bodyColor': 'yellow',
-    'bodySize': 'full size'
-
-};
-
-var konsole = {};
+}
 
 
 fncWelcome();
