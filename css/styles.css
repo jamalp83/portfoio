@@ -43,7 +43,7 @@
  .aboutme p {
      font-family: monospace;
      word-wrap: normal;
-     width: 281px;
+     max-width: 281px;
  }
 
 .item2 {
@@ -195,13 +195,23 @@ nav {
 #navigation > ul {
     /* align-items: center; */
     /* display: flex; */
-     /* flex-direction: row;  */
+    /* flex-direction: row;  */
     /* justify-content: space-around; */
     /* border: 1px solid black; */
     list-style-type: none;
     padding-left: 0;
 }
-#navigation > ul > li {/* display: inline; */list-style-type: none;position: relative;padding: -1px;/* background-color:rgb(150, 148, 148); */padding: 1px 20px 1px 20px;/* border-bottom: 3px solid rgb(92, 90, 90); */border-left: 5px solid black;margin-bottom: 25px;}
+#navigation > ul > li {
+/*     display: inline; */
+    list-style-type: none;
+    position: relative;
+    padding: -1px;
+    /* padding-right: 0em; */
+    /* background-color:rgb(150, 148, 148); */
+    padding: 1px 20px 1px 20px;
+    /* border-bottom: 3px solid rgb(92, 90, 90); */
+    border-left: 5px solid black;margin-bottom: 25px;
+    }
 #navigation ul > li:hover{
     background-color: rgb(95, 93, 93);
 
@@ -209,7 +219,7 @@ nav {
 
 #navigation > ul > li a {
     text-decoration: none;
-
+    text-shadow: 0 0 5px black;
 }
 #navigation > ul > li a:visited {
     color: black;
@@ -260,7 +270,7 @@ nav {
     /* background-color: aquamarine; */
     text-align: center;
 }
-@media screen and (min-width: 900px){
+/* @media screen and (min-width: 900px){
     body {
         grid-template-areas: 
         "navigation header header"                            
@@ -269,4 +279,27 @@ nav {
         grid-template-rows: min-content auto min-content;
         grid-template-columns: 40vw auto;
     }
+} */
+
+@media screen and (max-width: 900px){
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'nav nav'         
+    'content profile'         
+    'content profile'         
+    'foot foot';
+    grid-gap: 15px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+}
+#navigation > ul > li {
+    /* display: inline; */
+}
+#navigation ul{
+    display:flex;
+    justify-content:space-between;
+   
+}
 }
