@@ -292,7 +292,7 @@ nav {
     'foot foot';
     grid-gap: 15px;
     /* background-color: #2196F3; */
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
 }
 #navigation > ul > li {
     /* display: inline; */
@@ -303,7 +303,7 @@ nav {
    
 }
 body {
-    margin-left:10px;
+    margin-left: 0px;
     margin-right: 10px;
 }
 .pro_img img {
