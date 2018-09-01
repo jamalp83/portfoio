@@ -67,7 +67,7 @@
 }
 .item5 {
     grid-area: nav;
-    padding: 10px;
+    padding: 10px 45px 10px 45px;
     border: 1px solid black;
 }
 
@@ -296,15 +296,17 @@ nav {
 }
 #navigation > ul > li {
     /* display: inline; */
+    margin-bottom: 0px;
 }
 #navigation ul{
     display:flex;
     justify-content:space-between;
-   
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 body {
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 .pro_img img {
     width: 52%;
