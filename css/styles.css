@@ -302,4 +302,11 @@ nav {
     justify-content:space-between;
    
 }
+body {
+    margin-left:10px;
+    margin-right: 10px;
+}
+.pro_img img {
+    width: 52%;
+}
 }
