@@ -60,6 +60,23 @@
     margin: 31px;
 }
 
+/* .item3 > div {
+    margin: 2px 15px;
+} */
+
+
+.item3 #input-output{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#input-up{
+    padding:10px;
+    margin-left: 20px;
+}
+#input-up1 {
+    /* margin: 0px 0px 0px 20px; */
+    max-width: 400px;
+}
 .item4 {
     grid-area: foot;
     text-align: center;
@@ -134,8 +151,9 @@ body {
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
     margin: 0px 15%;
-    background-image: url(https://previews.123rf.com/images/monsitj/monsitj1704/monsitj170400032/75527762-block-chain-network-and-programming-concept-on-technology-background.jpg);
-    background-attachment: fixed;
+    background-color:black;
+    /* background-image: url(https://previews.123rf.com/images/monsitj/monsitj1704/monsitj170400032/75527762-block-chain-network-and-programming-concept-on-technology-background.jpg); */
+    /* background-attachment: fixed; */
     /* background-color: darkcyan; */
     /* display: grid; */
     /* grid-template-areas:
@@ -211,6 +229,7 @@ nav {
     padding: 1px 20px 1px 20px;
     /* border-bottom: 3px solid rgb(92, 90, 90); */
     border-left: 5px solid black;margin-bottom: 25px;
+    text-transform: uppercase;
     }
 #navigation ul > li:hover{
     background-color: rgb(95, 93, 93);
