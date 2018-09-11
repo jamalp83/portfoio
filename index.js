@@ -6,10 +6,18 @@ import Profile from './components/Profile';
 
 var State =  {
     'active': 'home',
-    'home': { 'title': "Jamal's Front End Web Dev Portfolio" },
-    'projects': { 'title': 'These are my active pages! ' },
-    'contact': { 'title': 'Contact me! ' },
-    'blog': { 'title': 'This is my blog page! ' },
+    'home': { 
+        'links':['blog','contact','projects'],
+        'title': "Jamal's Front End Web Dev Portfolio" },
+    'projects': { 
+        'links':['blog','contact','home'],
+        'title': 'These are my active pages! ' },
+    'contact': {
+        'links':['blog','home','projects'],
+        'title': 'Contact me! ' },
+    'blog': { 
+        'links':['home','contact','projects'],
+        'title': 'This is my blog page! ' },
     'Microsoft': { 'title': 'This is Microsofts Page' },
     'Google Search': { 'title': 'Google is the way to go' },
     'W3School': { 'title': 'This is the W3 page' }
@@ -24,7 +32,7 @@ function render(state){
 
     document.querySelector('.grid-container').innerHTML = `
             ${Header(state[state.active])}
-            ${Navigation(state)}
+            ${Navigation(state[state.active])}
             ${Content(state)}
             ${Profile(state)}
             ${Footer(state)}
@@ -33,9 +41,8 @@ function render(state){
     writeStuff = document.querySelector('#input-output');
 
     input.addEventListener('keyup', (event) => {
-        const keyName = event.which;
 
-        if(keyName === 13){
+        if(event.which === 13){
             console.log('enter');
             writeStuff.textContent = input.value;
             input.value = "";
@@ -53,7 +60,17 @@ function render(state){
         );
         // console.log('links.length');
     }
+}
 
+function handleNavigation(event){
+    var newState = State;
+
+    newState.active = event.target.textContent;
+    event.preventDefault();
+    render(newState);
+}
+
+render(State); 
 
     //* ***************************************************************************************************** */
     //  input.addEventListener('click', function(event){
@@ -76,17 +93,7 @@ function render(state){
     //     event.preventDefault();
     //     render(State);
     // }
-}
-
-function handleNavigation(event){
-    var newState = State;
-
-    newState.active = event.target.textContent;
-    event.preventDefault();
-    render(newState);
-}
-
-render(State); // kicks off the rendering - eslint disable line
+// kicks off the rendering - eslint disable line
 
 
 // document
