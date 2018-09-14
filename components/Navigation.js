@@ -1,44 +1,53 @@
-function Link(link){
+function Link(link,state){
+    var href = '';
+    var drop = '';
+
+    // function droplink(dr){
+    //     return `
+    //     <a href='#'>${dr}</a>
+    //     `;
+    // }
+
+
+    if(link !== 'low_carb_and_keto'){
+        href = link;
+    }
+    
+    // if(link === 'blog'){
+    //     state.drop.forEach((item) => drop += droplink(item));
+    //     link += drop;
+    // }
+    
+    
     return `
         <li>
-            <a href="/${link}">${link}</a>
+            <a href='/${href}' data-navigo>${link}</a>
         </li>
     `;
 }
 export default function Navigation(state){
     var links = '';
 
-    console.log(state.links);
-    for(let i = 0;i < state.links.length; i++){
-        links += Link(state.links[i]);
-    }
+
+    state.links.forEach((link) => links += Link(link,state));
+    console.log(links);
 
     return `
-    <div class="item5">
-    <div id="navigation">
-        <ul>
-            ${links}
-        </ul>
-    </div>
-    </div>
-        `;
+        <div id='navigation'>
+            <h1>sensei keto</h1>
+            <ul class='navigation'>
+                <li><img src="https://pbs.twimg.com/profile_images/902883343154372608/YNMlCTSf_400x400.jpg" alt="Sensei Keto"></li>
+                ${links}
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </ul>
+
+        </div>
+         `;
 }
 
 
-/* <div class="item5">
-<div id="navigation">
-    <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="projects/index.html">projects</a></li>
-        <li><a href="contact/index.html">contact</a></li>
-        <li><a href="blog/index.html">blog</a>
-            <ul><a href="blog/index.html">
-                </a><li><a href="https://www.microsoft.com/en-us/" target="_blank">Microsoft</a> </li>
-                <li><a href="https://www.google.com/" target="_blank">Google Search</a></li>
-                <li><a href="https://www.w3schools.com/" target="_blank">W3School</a></li>
-            </ul>
-        
-    </li>
-    </ul>
-</div>
-</div> */

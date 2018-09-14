@@ -1,161 +1,48 @@
+import Navigo from 'navigo';
+import axios from 'axios';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
-
-var State =  {
-    'active': 'home',
-    'home': { 
-        'links':['blog','contact','projects'],
-        'title': "Jamal's Front End Web Dev Portfolio" },
-    'projects': { 
-        'links':['blog','contact','home'],
-        'title': 'These are my active pages! ' },
-    'contact': {
-        'links':['blog','home','projects'],
-        'title': 'Contact me! ' },
-    'blog': { 
-        'links':['home','contact','projects'],
-        'title': 'This is my blog page! ' },
-    'Microsoft': { 'title': 'This is Microsofts Page' },
-    'Google Search': { 'title': 'Google is the way to go' },
-    'W3School': { 'title': 'This is the W3 page' }
-};
+import * as State from './store';
 
 
-function render(state){
-    var links;
-    var i = 0;
-    var input;
-    var writeStuff;
+var root = document.querySelector('#root');
+var router = new Navigo(window.location.origin);
+var newState = Object.assign({}, State);
 
-    document.querySelector('.grid-container').innerHTML = `
-            ${Header(state[state.active])}
-            ${Navigation(state[state.active])}
-            ${Content(state)}
-            ${Profile(state)}
-            ${Footer(state)}
-            `;
-    input = document.querySelector('#input-up1');
-    writeStuff = document.querySelector('#input-output');
+console.log(newState);
 
-    input.addEventListener('keyup', (event) => {
-
-        if(event.which === 13){
-            console.log('enter');
-            writeStuff.textContent = input.value;
-            input.value = "";
-            
-        }
-    },
-    );
-
-
-    links = document.querySelectorAll('#navigation a');
-    
-    for(let i = 0; i < links.length; i++){
-        links[i].addEventListener('click',
-            handleNavigation
-        );
-        // console.log('links.length');
-    }
-}
-
-function handleNavigation(event){
-    var newState = State;
-
-    newState.active = event.target.textContent;
-    event.preventDefault();
+function handleNavigation(activePage){  // -----------------
+    console.log(activePage);
+    newState.active = activePage;
     render(newState);
 }
-
-render(State); 
-
-    //* ***************************************************************************************************** */
-    //  input.addEventListener('click', function(event){
-            
-    //         console.log('enter');
-    //     displayContent
-    // }
-    
-         
-    //     }
-
-    // }
-
-    //     function displayContent(event){
-    //     var writeStuff = document.getElementById('#input-output');
-
-      
-    //         console.log(event.target.value);
-    //         writeStuff.textContent =  event.target.value;
-    //     event.preventDefault();
-    //     render(State);
-    // }
-// kicks off the rendering - eslint disable line
+// ------------------------------------------------
+function render(state){    // ---------------------
+    var links;
+    var i = 0;
+   
+    root.innerHTML = `
+            ${Navigation(state[state.active])}
+            ${Content(state)}
+        <!--   ${Profile(state)} -->
+            ${Footer(state)}
+            `;
 
 
-// document
-//     .querySelector('img')
-//     .addEventListener('click',
-//         function changeThePic(event){
-//             console.log(event.target);
-//             if(event.target.outerHTML === '<img src="https://pbs.twimg.com/profile_images/2767840944/099cbd84f3ff51a28756c4265638c39e_400x400.jpeg" alt="Jamal">'){
-//                 event.target.outerHTML = '<img src="https://lh4.googleusercontent.com/-mV8HRdZQu0o/AAAAAAAAAAI/AAAAAAAAAEw/44u0J13N0Tw/photo.jpg" alt="Jamal">';
-//             }
-//             else{
-//                 event.target.outerHTML === '<img src="https://pbs.twimg.com/profile_images/2767840944/099cbd84f3ff51a28756c4265638c39e_400x400.jpeg" alt="Jamal">';
-//             }
-//         }
-//     );
+    router.updatePageLinks();
+} // ---------------------------------------------------
 
 
-// document
-//     .querySelector('img')
-//     .addEventListener('click',
-//         function buyInq(event){
-//             const TAX_RATE = 0.08;
-//             var balAcct = 500;
-//             var phCost = 90;
-//             var phAccessory = 10;
-//             var cntPhones = 0;
-//             var purTotal = 0;
-//             var totPhones = 0;
-    
-//             var phYes = prompt('Would you like to buy a phone?');
+router.on('/:page', (params) => handleNavigation(params.page))
+    .on('/', () => handleNavigation('low_carb_and_keto'))
+    .resolve();
 
-//             if(phYes == 'yes'){
-//                 do {
-//                     purTotal = buyPhone(purTotal);
-//                     console.log(purTotal);
-//                     totPhones++;
-//                     console.log(totPhones);
-//                     console.log('bal-' + (balAcct - (purTotal + (purTotal * TAX_RATE))));
-//                     console.log('amt-' + ((phCost + phAccessory) + (TAX_RATE * (phCost + phAccessory))));
-                    
-//                     if((balAcct - (purTotal + (purTotal * TAX_RATE))) > ((phCost + phAccessory) + (TAX_RATE * (phCost + phAccessory)))){
-//                         phYes = prompt('Would you like to buy another phone?');
-//                     }
-//                     else{
-//                         phYes = prompt(`You don't have enough funds to purchase anymore phone. Would you like to purchase the ${totPhones} phones you have?`);
-//                         if(phYes == 'yes'){
-//                             purTotal += (purTotal * TAX_RATE);
-//                             balAcct -= purTotal;
-//                             alert('Your purchase total is $' + purTotal + ', leaving you with an account balance of $' + balAcct + '!');
-//                             phYes = 'no';
-//                         }
-//                     }
-//                 } while(phYes == 'yes');
-//             }
-//             else{
-//                 alert('Ok, have a nice day!');
-//             }
-            
-//             function buyPhone(pt){
-//                 pt += (phCost + phAccessory);
-                
-//                 return pt;
-//             }
-//         }
-//     );
+axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => {
+        newState.posts = response.data;
+        render(newState);
+    });
+
