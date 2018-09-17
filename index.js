@@ -15,7 +15,7 @@ var newState = Object.assign({}, State);
 console.log(newState);
 
 function handleNavigation(activePage){  // -----------------
-    console.log(activePage);
+    // console.log(activePage);
     newState.active = activePage;
     render(newState);
 }

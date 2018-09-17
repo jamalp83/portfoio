@@ -1,7 +1,7 @@
 export default function Home(){
     return `
         <div class="content">
-        <p>${Date()}</p>
+       <!-- <p>${Date()}</p> -->
         <div class='content_1'>
                 <div class="left">
                     <div>

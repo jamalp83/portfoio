@@ -23,23 +23,25 @@
   
   .content {
   background-color:white;
-    background-image: url(https://vignette.wikia.nocookie.net/clubpenguin/images/3/3e/Sensei_sig_new.png/revision/latest?cb=20130206191750);            background-position-x: 50%;
+    /* background-image: url(https://vignette.wikia.nocookie.net/clubpenguin/images/3/3e/Sensei_sig_new.png/revision/latest?cb=20130206191750);            background-position-x: 50%; */
   background-position-y: 50%;
   background-repeat: no-repeat;
   /* opacity:.2; */
   }
   
   .content_1{
-  display: grid;
+  /* display: grid;
   grid-template-areas: 'left_1 right_1'
                 'left_1 right_1';
   grid-template-columns: 65% 35%;
-  /*   grid-template-rows: 1px 1px 1px; */
-  grid-gap: 71px;
+  /*   grid-template-rows: 1px 1px 1px; 
+  grid-gap: 71px; */
   margin: 0 16vw;
   /* background-color: black; */
-  padding: 10px;
-  margin-top: 4em;
+  /* padding: 10px;
+  margin-top: 4em; */
+  margin: 0;
+  padding: 0;
   min-height: 500px;
   justify-content: center;
   }
@@ -48,13 +50,13 @@
   text-align: center;
   padding: 20px;
   font-size: 16px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   }
   .left{
   grid-area: left_1;
   }
   .left img {
-    max-width: 35vw;
+    max-width: 100%;
   }
   .center{
   grid-area: center_1;
@@ -106,8 +108,8 @@
   }
   
   .item4 {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
     width: 100%;
       text-align: center;
       background-color: black;
@@ -117,6 +119,11 @@
   .item4 a {
     color: white;
   }
+
+div.info {
+  display:flex;
+  flex-direction: column;
+}
 
 
 
@@ -134,6 +141,24 @@
     font-size: 1.2em;
     padding-left:0;
     margin: auto;
+    }
+    form {
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    div.info {
+      display:flex;
+      flex-direction: column;
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+
+    div.submitting {
+      display:flex;
+      flex-direction:column;
+      align-items: center;
     }
     .content_1{
       display: grid;

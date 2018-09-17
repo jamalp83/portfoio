@@ -30,7 +30,7 @@ export default function Navigation(state){
 
 
     state.links.forEach((link) => links += Link(link,state));
-    console.log(links);
+    // console.log(links);
 
     return `
         <div id='navigation'>
