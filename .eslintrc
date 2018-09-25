@@ -171,7 +171,7 @@
         "no-restricted-imports": "error",
         "no-restricted-modules": "error",
         "no-restricted-syntax": [ "error",
-            "ClassDeclaration"
+            // "ClassDeclaration"
         ],
         "no-return-assign": "off",
         "no-script-url": "error",
