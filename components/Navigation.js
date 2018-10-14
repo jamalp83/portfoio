@@ -1,6 +1,6 @@
-function Link(link,state){
+function Link(link){
     var href = '';
-    var drop = '';
+
 
     // function droplink(dr){
     //     return `
@@ -9,7 +9,7 @@ function Link(link,state){
     // }
 
 
-    if(link !== 'low_carb_and_keto'){
+    if(link !== 'home'){
         href = link;
     }
     
@@ -29,7 +29,7 @@ export default function Navigation(state){
     var links = '';
 
 
-    state.links.forEach((link) => links += Link(link,state));
+    state.links.forEach((link) => links += Link(link));
     // console.log(links);
 
     return `
@@ -38,12 +38,7 @@ export default function Navigation(state){
             <ul class='navigation'>
                 <li><img src="https://pbs.twimg.com/profile_images/902883343154372608/YNMlCTSf_400x400.jpg" alt="Sensei Keto"></li>
                 ${links}
-                <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
+
             </ul>
 
         </div>

@@ -1,9 +1,10 @@
 export { default as active } from './Active';
-export { default as blog } from './Blog';
+export { default as search_page } from './Blog';
 export { default as projects } from './Projects';
-export { default as low_carb_and_keto } from './Home';
+export { default as home } from './Home';
 export { default as contact } from './Contact';
 export { default as repos } from './Repos';
 export { default as weather } from './Weather';
 export { default as posts } from './Posts';
-
+export { default as food } from './Food';
+export { default as nutrition } from './Nutrition';

@@ -1,5 +1,5 @@
 export default {
     'body': 'projects',
-    'links': [ 'low_carb_and_keto','contact','projects','blog' ],
+    'links': [ 'home','contact','projects','search_page' ],
     'title': 'These are my active pages!'
 };

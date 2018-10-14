@@ -1,7 +1,8 @@
 import Navigo from 'navigo';
 import axios from 'axios';
+import { tween, styler } from 'popmotion';
 import Navigation from './components/Navigation';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Greeter from './components/Greeter';
 import Content from './components/Content';
 import Footer from './components/Footer';
@@ -13,6 +14,7 @@ var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin);
 var store;
 var greeter = new Greeter();
+
 
 class Store{
     constructor(state){
@@ -38,18 +40,115 @@ class Store{
 store = new Store(State);
 
 
+function getFood(food1){
+    axios
+        .get(`https://api.nal.usda.gov/ndb/search/?format=json&q=${food1}&ds=Standard%20Reference&sort=r&max=25&offset=0&api_key=${process.env.NB_API_KEY}`)
+        .then((response) => {
+            store.dispatch((state) => {
+                // debugger;
+                state.food = response.data.list.item;
+
+                
+                return state;
+            });
+        });
+}
+
+function testClick(test){
+    axios
+        .get(`https://api.nal.usda.gov/ndb/reports/?ndbno=${test}&type=b&format=json&api_key=${process.env.NB_API_KEY}`)
+        .then((response) => {
+            store.dispatch((state) => {
+                state.nutrition = response.data.report.food.nutrients[4];
+                debugger;
+                console.log(state.nutrition);
+                
+                
+                return state;
+            });
+        });
+
+    // ----------------------------------------------------------------------------------
+    // let tsit = store.getState();
+    // let somedata = document.getElementById('apiwork-clickresults');
+
+    // somedata.innerHTML = tsit.nutrition;
+
+    // tsit.innerHTML = state.nutrition[0];
+}
+
+
 function render(){
     var state = store.getState();
+    var eachNdbno;
 
-    console.log(state);
+    // debugger;
+
 
     root.innerHTML = `
             ${Navigation(state[state.active])}
             ${Content(state)}
-        <!--   ${Profile(state)} -->
             ${Footer(state)}
             `;
     greeter.render(root);
+
+    if(state.nutrition.length !== 0){
+        let somedata = document.getElementById('apiwork-clickresults');
+
+        somedata.innerHTML = `<h1>${state.nutrition['name']}</h1> <h2>${state.nutrition['value']}${state.nutrition['unit']}</h2>`;
+    }
+
+    document
+        .querySelector('h1')
+        .addEventListener('click', (event) => {
+            var animation = tween({
+                'from': {
+                    'fontSize': '200%'
+                },
+                'to': {
+                    'fontSize': '400%'
+                },
+                'duration': 2000
+            });
+            
+            var title =  styler(event.target);
+
+            animation.start((value) => title.set(value));
+        });
+
+    document.querySelector('#search').addEventListener('keyup', (event) => {
+        if(event.which === 13){
+            getFood(event.target.value);
+            event.preventDefault();
+        }
+    });
+    document.querySelector('#search button').addEventListener('click', (event) => {
+        let testit = document.querySelector('#search input');
+
+        getFood(testit.value);
+        event.preventDefault();
+    });
+    
+
+    // document.querySelector('.tableclick a').addEventListener('click', (event) => {
+    //     event.preventDefault();
+    //     console.log(event.target.innerHTML);
+    // });
+    
+    eachNdbno = document.querySelector('.tableclick');
+    
+    eachNdbno.addEventListener('click', (event) => {
+        let somedata = document.getElementById('apiwork-clickresults');
+
+        if(event.target.localName == 'a'){
+            event.preventDefault();
+            let state = store.getState();
+
+            
+            somedata.innerHTML = testClick(event.target.innerHTML);
+        }
+    });
+
 
     router.updatePageLinks();
 }
@@ -60,7 +159,7 @@ function handleNavigation(activePage){
 
 router
     .on('/:page', (params) => handleNavigation(params.page))
-    .on('/', () => handleNavigation('low_carb_and_keto'))
+    .on('/', () => handleNavigation('home'))
     .resolve();
 
 axios
@@ -74,7 +173,7 @@ axios
     });
 
 axios
-    .get('http://api.openweathermap.org/data/2.5/weather?q=saint%20louis&APPID=85bebd1cb650c17902df288428710b2c')
+    .get('https://api.openweathermap.org/data/2.5/weather?q=saint%20louis&APPID=85bebd1cb650c17902df288428710b2c')
     .then((response) => {
         store.dispatch((state) => {
             state.weather = response.data;
@@ -93,9 +192,13 @@ axios
         store.dispatch((state) => {
             state.repos = response.data;
 
+            
             return state;
         });
     });
+
+
+store.addStateListener(render);
 
 
 // axios
@@ -108,10 +211,8 @@ axios
 //         });
 //     });
 
-store.addStateListener(render);
-
-
-// axios.get('http://api.savvycoders.com/books')
-//     .then((response) => console.log(response.data));
-       
-    
+// https://api.nal.usda.gov/ndb/search/?format=json&q=${food}r&sort=n&max=25&offset=0&api_key=DEMO_KEY
+// This is the API to perform the search by food name; expected result is to return a list of relevant
+// foods with there ndbno(which I would like in form of links), which will then allow you to click one
+// of the links and then return detail nutrition data about the item selected
+// https://api.nal.usda.gov/ndb/reports/?ndbno=01009&type=b&format=json&api_key=DEMO_KEY

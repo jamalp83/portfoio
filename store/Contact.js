@@ -1,5 +1,5 @@
 export default {
     'body': 'contact',
-    'links': [ 'low_carb_and_keto','contact','projects','blog' ],
+    'links': [ 'home','contact','projects','search_page' ],
     'title': 'Contact me! '
 };

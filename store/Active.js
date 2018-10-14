@@ -1,1 +1,1 @@
-export default 'low_carb_and_keto';
+export default 'home';

@@ -1,11 +1,12 @@
 export default function Posts(post){
     return `
         
-        <div>
-            <h1>${post.userId}</h1>
+        <tr>
+        <td><a href="#">${post.ndbno}</a></td>
+            <td>${post.name}</td>
 
-            <h3>${post.body}</h3>
-        </div>
+           
+        </tr>
     
     `;
 }

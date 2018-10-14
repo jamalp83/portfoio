@@ -1,5 +1,5 @@
 export default {
-    'body': 'low_carb_and_keto',
-    'links': [ 'low_carb_and_keto','contact','projects','blog' ],
+    'body': 'home',
+    'links': [ 'home','contact','projects','search_page' ],
     'title': "Jamal's Front End Web Dev Portfolio"
 };

@@ -1,6 +1,6 @@
 export default {
-    'body': 'blog',
-    'links': [ 'low_carb_and_keto','contact','projects','blog' ],
+    'body': 'search_page',
+    'links': [ 'home','contact','projects', 'search_page' ],
     'title': 'This is my blog page! ',
 
 };

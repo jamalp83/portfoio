@@ -30,7 +30,8 @@ export default function Home(state){
                 <div class="left">
                     <div>
                     
-                            <img src="https://cdn.ruled.me/wp-content/uploads/2015/11/Tacos-final.jpg" alt="Keto!!!!">
+                           <!-- <img src="https://cdn.ruled.me/wp-content/uploads/2015/11/Tacos-final.jpg" alt="Keto!!!!"> -->
+                            <img src="http://static8.depositphotos.com/1032885/978/i/950/depositphotos_9780666-Healthy-food.jpg" alt="Keto!!!!">
                     </div>
                     
 

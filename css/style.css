@@ -1,45 +1,57 @@
 @media screen and (max-width: 900px){
   
-    .navigation {
-    list-style-type: none;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    width: 85%;
-    min-width: 320px;
-    font-size: 1.2em;
-    }
+  .navigation {
+  list-style-type: none;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 85%;
+  min-width: 320px;
+  font-size: 1.2em;
+  }
   }
   body{
-    font-family: 'Fredericka the Great', cursive;
-    font-family: 'Coda', cursive;
-    width:100%; 
-    margin:0;
+  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Coda', cursive;
+  /* width:100%;  */
+  margin:0;
   /*             background-color:white;
-    background-image: url(https://vignette.wikia.nocookie.net/clubpenguin/images/3/3e/Sensei_sig_new.png/revision/latest?cb=20130206191750); */
-  
+  background-image: url(https://vignette.wikia.nocookie.net/clubpenguin/images/3/3e/Sensei_sig_new.png/revision/latest?cb=20130206191750); */
+
   }
-  
+
+  #apiwork {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+  }
+    
+  #apiwork-sresults{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #apiwork-clickresults{
+    grid-column: 2;
+    grid-row: 1;
+  }
   .content {
   background-color:white;
-    /* background-image: url(https://vignette.wikia.nocookie.net/clubpenguin/images/3/3e/Sensei_sig_new.png/revision/latest?cb=20130206191750);            background-position-x: 50%; */
-  background-position-y: 50%;
+  width: 100%;
   background-repeat: no-repeat;
+  /* border: 2px solid red; */
   /* opacity:.2; */
   }
-  
+  input {
+    max-width: 30rem;
+  }
+
+  textarea {
+    max-width: 30rem;
+  }
   .content_1{
-  /* display: grid;
-  grid-template-areas: 'left_1 right_1'
-                'left_1 right_1';
-  grid-template-columns: 65% 35%;
-  /*   grid-template-rows: 1px 1px 1px; 
-  grid-gap: 71px; */
   margin: 0 16vw;
-  /* background-color: black; */
-  /* padding: 10px;
-  margin-top: 4em; */
   margin: 0;
   padding: 0;
   min-height: 500px;
@@ -56,7 +68,8 @@
   grid-area: left_1;
   }
   .left img {
-    max-width: 100%;
+    width: 100%;
+    height: 451px;
   }
   .center{
   grid-area: center_1;
@@ -86,6 +99,9 @@
   
   }
   
+  table, thead, tbody, td {
+    border: black 1px solid;
+  }
 
   
   .navigation a {
@@ -108,8 +124,7 @@
   }
   
   .item4 {
-    /* position: fixed;
-    bottom: 0; */
+
     width: 100%;
       text-align: center;
       background-color: black;
@@ -125,6 +140,9 @@ div.info {
   flex-direction: column;
 }
 
+form {
+  padding:2% 10%;
+}
 
 
   @media screen and (max-width: 900px){
@@ -151,8 +169,8 @@ div.info {
     div.info {
       display:flex;
       flex-direction: column;
-      margin-left: 2em;
-      margin-right: 2em;
+      /* margin-left: 2em;
+      margin-right: 2em; */
     }
 
     div.submitting {
