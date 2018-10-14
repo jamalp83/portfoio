@@ -90,7 +90,7 @@ function render(){
             ${Content(state)}
             ${Footer(state)}
             `;
-    greeter.render(root);
+    // greeter.render(root);
 
     if(state.nutrition.length !== 0){
         let somedata = document.getElementById('apiwork-clickresults');
@@ -144,8 +144,8 @@ function render(){
             event.preventDefault();
             let state = store.getState();
 
-            
-            somedata.innerHTML = testClick(event.target.innerHTML);
+            testClick(event.target.innerHTML);
+            // somedata.innerHTML = testClick(event.target.innerHTML);
         }
     });
 

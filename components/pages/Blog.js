@@ -6,6 +6,23 @@ export default function Blog(state){
         .map(post)
         .join('');
 
+
+    console.log(entry);
+
+    if(entry.length < 1){
+        return `    
+        
+        <div id="search">
+        <!-- <form action="/action_page.php"> -->
+        <!-- <form> -->
+            <input type="text" placeholder="Search Nutrition Details" name="search" data-navigo>
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <div>Please perform a search on any food item.</div>
+            <div>Results will be displayed below, and items can to clicked to view the amount of Carbs in the item.</div>
+        <!-- </form> -->
+    </div>`;
+    }
+
     return `
 
     <div id="search">

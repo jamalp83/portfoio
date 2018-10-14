@@ -49,6 +49,7 @@
 
   textarea {
     max-width: 30rem;
+    border-width: 3px;
   }
   .content_1{
   margin: 0 16vw;
@@ -57,13 +58,20 @@
   min-height: 500px;
   justify-content: center;
   }
-  .content_1 > div {
+  .content_1 > div.left {
   background-color: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0px;
   font-size: 16px;
-  /* border: 2px solid black; */
+  border: 1px solid midnightblue;
   }
+  .content_1 > div.right {
+    background-color: white;
+    text-align: center;
+    padding: 20px 20%;
+    font-size: 16px;
+    /* border: 1px solid midnightblue; */
+  }  
   .left{
   grid-area: left_1;
   }
@@ -135,13 +143,22 @@
     color: white;
   }
 
-div.info {
+div.inputs {
   display:flex;
   flex-direction: column;
+  align-items: center;
+  
+  
+  /* flex-direction: column; */
+  
 }
-
+div.inputs input {
+  margin-bottom: 10px;
+  border-width: 3px;
+}
 form {
   padding:2% 10%;
+  text-align: center;
 }
 
 
