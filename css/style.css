@@ -51,6 +51,35 @@
     max-width: 30rem;
     border-width: 3px;
   }
+  .sect4-grid {
+    display: grid;
+    grid-template-areas:
+      'c1 c2 c3';
+    grid-gap: 2px;
+    background-color: black;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .s4-c1 {
+     grid-area: c1; background-color: white; 
+    }
+  .s4-c2 { 
+    grid-area: c2; background-color: white; 
+  }
+  .s4-c3 { 
+    grid-area: c3; background-color: white; 
+  }
+  .keto-dont-slide {
+    display: none;
+  }
+  .keto-calc-slide {
+    display: none;
+  }
+  .my-journey {
+    display: none;
+  }
+
   .content_1{
   margin: 0 16vw;
   margin: 0;
@@ -63,7 +92,7 @@
   text-align: center;
   padding: 20px 0px;
   font-size: 16px;
-  border: 1px solid midnightblue;
+  /* border: 1px solid midnightblue; */
   }
   .content_1 > div.right {
     background-color: white;
@@ -99,7 +128,7 @@
     color: white;
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline;
+    align-items: center;
     width: 85%;
     min-width: 810px;
     font-size: 1.2em;
@@ -132,7 +161,8 @@
   }
   
   .item4 {
-
+    position: relative;
+    
     width: 100%;
       text-align: center;
       background-color: black;

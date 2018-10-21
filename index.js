@@ -3,7 +3,7 @@ import axios from 'axios';
 import { tween, styler } from 'popmotion';
 import Navigation from './components/Navigation';
 // import Header from './components/Header';
-import Greeter from './components/Greeter';
+// import Greeter from './components/Greeter';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
@@ -13,7 +13,8 @@ import * as State from './store';
 var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin);
 var store;
-var greeter = new Greeter();
+
+// var greeter = new Greeter();
 
 
 class Store{
@@ -45,7 +46,6 @@ function getFood(food1){
         .get(`https://api.nal.usda.gov/ndb/search/?format=json&q=${food1}&ds=Standard%20Reference&sort=r&max=25&offset=0&api_key=${process.env.NB_API_KEY}`)
         .then((response) => {
             store.dispatch((state) => {
-                // debugger;
                 state.food = response.data.list.item;
 
                 
@@ -60,8 +60,8 @@ function testClick(test){
         .then((response) => {
             store.dispatch((state) => {
                 state.nutrition = response.data.report.food.nutrients[4];
-                debugger;
-                console.log(state.nutrition);
+
+                //    console.log(state.nutrition);
                 
                 
                 return state;
@@ -81,8 +81,7 @@ function testClick(test){
 function render(){
     var state = store.getState();
     var eachNdbno;
-
-    // debugger;
+    var slideWatch;
 
 
     root.innerHTML = `
@@ -91,13 +90,18 @@ function render(){
             ${Footer(state)}
             `;
     // greeter.render(root);
-
+   
     if(state.nutrition.length !== 0){
         let somedata = document.getElementById('apiwork-clickresults');
 
         somedata.innerHTML = `<h1>${state.nutrition['name']}</h1> <h2>${state.nutrition['value']}${state.nutrition['unit']}</h2>`;
     }
-
+    if(state.active == 'home'){
+        slideWatch = document.querySelector('.s4-c1');
+        slideWatch.addEventListener('click', (event) => {
+            console.log('clicked');
+        });
+    }
     document
         .querySelector('h1')
         .addEventListener('click', (event) => {
@@ -115,41 +119,41 @@ function render(){
 
             animation.start((value) => title.set(value));
         });
+    if(state.active == 'search_page'){
+        document
+            .querySelector('#search')
+            .addEventListener('keyup', (event) => {
+                if(event.which === 13){
+                    getFood(event.target.value);
+                    event.preventDefault();
+                }
+            });
+ 
+    
+        document
+            .querySelector('#search button')
+            .addEventListener('click', (event) => {
+                let testit = document.querySelector('#search input');
 
-    document.querySelector('#search').addEventListener('keyup', (event) => {
-        if(event.which === 13){
-            getFood(event.target.value);
-            event.preventDefault();
+                getFood(testit.value);
+                event.preventDefault();
+            });
+    
+
+        eachNdbno = document.querySelector('.tableclick');
+        
+        if(eachNdbno !== null){
+            eachNdbno.addEventListener('click', (event) => {
+                console.log('click');
+                if(event.target.localName == 'a'){
+                    event.preventDefault();
+
+
+                    testClick(event.target.innerHTML);
+                }
+            });
         }
-    });
-    document.querySelector('#search button').addEventListener('click', (event) => {
-        let testit = document.querySelector('#search input');
-
-        getFood(testit.value);
-        event.preventDefault();
-    });
-    
-
-    // document.querySelector('.tableclick a').addEventListener('click', (event) => {
-    //     event.preventDefault();
-    //     console.log(event.target.innerHTML);
-    // });
-    
-    eachNdbno = document.querySelector('.tableclick');
-    
-    eachNdbno.addEventListener('click', (event) => {
-        let somedata = document.getElementById('apiwork-clickresults');
-
-        if(event.target.localName == 'a'){
-            event.preventDefault();
-            let state = store.getState();
-
-            testClick(event.target.innerHTML);
-            // somedata.innerHTML = testClick(event.target.innerHTML);
-        }
-    });
-
-
+    }
     router.updatePageLinks();
 }
 
@@ -191,7 +195,7 @@ axios
     .then((response) => {
         store.dispatch((state) => {
             state.repos = response.data;
-
+            
             
             return state;
         });

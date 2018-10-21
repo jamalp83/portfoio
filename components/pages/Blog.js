@@ -7,7 +7,7 @@ export default function Blog(state){
         .join('');
 
 
-    console.log(entry);
+    // console.log(entry);
 
     if(entry.length < 1){
         return `    
@@ -38,8 +38,9 @@ export default function Blog(state){
             <table>
                     <thead>
                         <tr>
-                            <th colspan="2">This is Table data</th>
-                        </tr>
+                            <th>NDB#</th>
+                            <th>Food Description</th>
+                        </tr>                      
                     </thead>
                     <tbody class="tableclick">
     
