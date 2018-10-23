@@ -1,5 +1,35 @@
-export default function Projects(){
+import {
+    capitalize,
+    kebabCase
+} from 'lodash';
+
+function Repo(repo){
+    var name = kebabCase(repo.name)
+        .split('-')
+        .map(capitalize)
+        .join(' ');
+
     return `
-    <h3>Currently, this is my first functional project, but more to to come!!!</h3>
+        <li>
+                <a href="${repo.html_url}" target="_blank">${name}</a>
+        </li>
+        `;
+}
+
+export default function Projects(state){
+    var repos = state
+        .repos
+        .map(Repo)
+        .join('');
+    var repos = state
+        .repos
+        .map(Repo)
+        .join('');
+
+    return `
+    <h3>Below are a list of my projects from my github account.</h3>
+    <ol>
+        ${repos}
+    </ol>
 `;
 }

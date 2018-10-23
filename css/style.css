@@ -31,6 +31,7 @@
   #apiwork-sresults{
     grid-column: 1;
     grid-row: 1;
+    margin: 14px;
   }
   #apiwork-clickresults{
     grid-column: 2;
@@ -56,13 +57,21 @@
     grid-template-areas:
       'c1 c2 c3';
     grid-gap: 2px;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  
     background-color: black;
     padding: 2px;
     text-align: center;
   }
-
+ #search {
+  margin: 14px;
+ }
+ #search div {
+  margin: 3px;
+ }
   .s4-c1 {
      grid-area: c1; background-color: white; 
+  
     }
   .s4-c2 { 
     grid-area: c2; background-color: white; 
@@ -70,14 +79,44 @@
   .s4-c3 { 
     grid-area: c3; background-color: white; 
   }
-  .keto-dont-slide {
-    display: none;
+  #keto-dont-slide {
+    /* position:absolute; */
+    height:0px;
+    margin: 10px;
+    /* width:550px; */
+    /* background:#000; */
+    top:350px;
+    /* left:160px; */
+    border-radius:0px 0px 8px 8px;
+    overflow:hidden;
+    z-index:10000;
+    transition: height 0.3s linear 0s;
   }
-  .keto-calc-slide {
-    display: none;
+  #keto-calc-slide {
+        /* position:absolute; */
+        height:0px;
+        margin: 10px;
+        /* width:550px; */
+        /* background:#000; */
+        top:350px;
+        /* left:160px; */
+        border-radius:0px 0px 8px 8px;
+        overflow:hidden;
+        z-index:10000;
+        transition: height 0.3s linear 0s;
   }
-  .my-journey {
-    display: none;
+  #my-journey {
+        /* position:absolute; */
+        height:0px;
+        margin: 10px;
+        /* width:550px; */
+        /* background:#000; */
+        top:350px;
+        /* left:160px; */
+        border-radius:0px 0px 8px 8px;
+        overflow:hidden;
+        z-index:10000;
+        transition: height 0.3s linear 0s;
   }
 
   .content_1{
@@ -138,6 +177,7 @@
   
   table, thead, tbody, td {
     border: black 1px solid;
+    padding: 1px !important;
   }
 
   
@@ -274,4 +314,44 @@ form {
         text-align: center;
       }
 
+  }
+
+  div#topbar{
+    background:-webkit-linear-gradient(#666, #000);
+    background:linear-gradient(#666, #000);
+    height:60px;
+  }
+  div#topbar > #logo{
+    float:left;
+    width:140px;
+    height:35px;
+    margin:8px 0px 0px 30px;
+    font-size:36px;
+    color:#999;
+  }
+  div#topbar > #sections_btn_holder{
+    float:left;
+    width:144px;
+    height:46px;
+    padding-top:16px;
+  }
+  div#topbar > #sections_btn_holder > button{ background:#F90;}
+  div#topbar > #sections_panel{
+    position:absolute;
+    height:0px;
+    width:550px;
+    background:#000;
+    top:350px;
+    left:160px;
+    border-radius:0px 0px 8px 8px;
+    overflow:hidden;
+    z-index:10000;
+    transition: height 0.3s linear 0s;
+  }
+  div#topbar > #sections_panel > div{
+    background:#333;
+    padding:20px;
+    height:300px;
+    margin:10px;
+    color:#FC0;
   }

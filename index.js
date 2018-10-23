@@ -40,6 +40,19 @@ class Store{
 
 store = new Store(State);
 
+function toggleNavPanel(x){
+    var panel = document.getElementById(x);
+    var maxH = '100px';
+
+    if(panel.style.height == maxH){
+        panel.style.height = '0px';
+        // navarrow.innerHTML = '&#9662;';
+    }
+    else{
+        panel.style.height = maxH;
+        // navarrow.innerHTML = '&#9652;';
+    }
+}
 
 function getFood(food1){
     axios
@@ -81,7 +94,6 @@ function testClick(test){
 function render(){
     var state = store.getState();
     var eachNdbno;
-    var slideWatch;
 
 
     root.innerHTML = `
@@ -89,19 +101,15 @@ function render(){
             ${Content(state)}
             ${Footer(state)}
             `;
-    // greeter.render(root);
+
    
     if(state.nutrition.length !== 0){
         let somedata = document.getElementById('apiwork-clickresults');
 
         somedata.innerHTML = `<h1>${state.nutrition['name']}</h1> <h2>${state.nutrition['value']}${state.nutrition['unit']}</h2>`;
     }
-    if(state.active == 'home'){
-        slideWatch = document.querySelector('.s4-c1');
-        slideWatch.addEventListener('click', (event) => {
-            console.log('clicked');
-        });
-    }
+
+
     document
         .querySelector('h1')
         .addEventListener('click', (event) => {
@@ -119,6 +127,7 @@ function render(){
 
             animation.start((value) => title.set(value));
         });
+
     if(state.active == 'search_page'){
         document
             .querySelector('#search')
@@ -154,8 +163,21 @@ function render(){
             });
         }
     }
+
+    if(state.active == 'home'){
+        document.querySelector('.s4-c1').addEventListener('click', () => {
+            toggleNavPanel('keto-dont-slide');
+        });
+        document.querySelector('.s4-c2').addEventListener('click', () => {
+            toggleNavPanel('keto-calc-slide');
+        });
+        document.querySelector('.s4-c3').addEventListener('click', () => {
+            toggleNavPanel('my-journey');
+        });
+    }
     router.updatePageLinks();
 }
+
 
 function handleNavigation(activePage){
     store.dispatch((state) => Object.assign(state,{ 'active': activePage }));
